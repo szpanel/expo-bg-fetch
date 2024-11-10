@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import {Image, StyleSheet, Platform, Button} from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { registerBackgroundTask, unregisterBackgroundTask} from "@/app/bg-fetch";
 
 export default function HomeScreen() {
   return (
@@ -15,6 +16,8 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
+        <Button title="REGISTER BG TASK" onPress={registerBackgroundTask}/>
+        <Button title="UNREGISTERREGISTER BG TASK" onPress={unregisterBackgroundTask}/>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
